@@ -12,7 +12,9 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        //
+        $users = Usuarios::all();
+        return view('usuarios/indexUsuarios', compact('users'));
+        //return view('usuariosusuarios/indexUsuarios'->with(['users' => $usuarios]);
     }
 
     /**
@@ -28,7 +30,17 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuarios = new Usuarios();
+        $usuarios->apodo = $request->apodo;
+        $usuarios->nombre = $request->nombre;
+        $usuarios->apellidos = $request->apellidos;
+        $usuarios->edad = $request->edad;
+        $usuarios->genero = $request->genero;
+        $usuarios->email = $request->email;
+        $usuarios->save();
+
+        return redirect('/usuarios');
+
     }
 
     /**
