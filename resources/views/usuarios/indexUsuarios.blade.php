@@ -8,15 +8,17 @@
 <body>
     
     <ul>
-        @foreach ($users as $usuarios) <!--  -->
+        @foreach ($users as $usuarios)
             <li>
-                {{ $usuarios->apodo }}
+                <a href="{{ route('usuarios.show', $usuarios) }}">
+                    
+                    {{ $usuarios->apodo }}
 
-
-
+                </a>
             </li>
-        @endforeach
-    </ul>
+        @endforeach 
+    </ul
 
 </body>
 </html>
+

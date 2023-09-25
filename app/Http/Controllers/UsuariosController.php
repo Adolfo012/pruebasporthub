@@ -46,9 +46,9 @@ class UsuariosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(usuarios $usuarios)
+    public function show(usuarios $usuario)
     {
-        //
+        return view('usuarios.showUsuarios', compact('usuario'));
     }
 
     /**
