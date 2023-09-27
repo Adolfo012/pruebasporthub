@@ -17,24 +17,24 @@
 
         <!-- Apodo -->
         <label for="apodo">Apodo:</label><br>
-        <input type="text" name="apodo"><br><br>
+        <input type="text" name="apodo" value="{{ old('apodo') ?? $usuario->apodo }}"><br><br>
         <!-- Nombre -->
         <label for="nombre">Nombre:</label><br>
-        <input type="text" name="nombre"><br><br>
+        <input type="text" name="nombre" value="{{ old('nombre') ?? $usuario->nombre }}"><br><br>
         <!-- Apellidos -->
         <label for="apellidos">Apellidos:</label><br>
-        <input type="text" name="apellidos"><br><br>
+        <input type="text" name="apellidos" value="{{ old('apellidos') ?? $usuario->apellidos }}"><br><br>
         <!-- Edad -->
         <label for="edad">Edad:</label><br>
-        <input type="text" name="edad"><br><br>
+        <input type="text" name="edad" value="{{ old('edad') ?? $usuario->edad }}"><br><br>
         <!-- Genero (SELECT) -->
         <label for="genero">Genero:</label><br>
-        <input type="text" name="genero"><br><br>
+        <input type="text" name="genero" value="{{ old('genero') ?? $usuario->genero }}"><br><br>
         <!-- Correo -->
         <label for="email">Correo:</label><br>
-        <input type="text" name="email"><br><br>
+        <input type="text" name="email" value="{{ old('email') ?? $usuario->email }}"><br><br>
         <!-- Cargar -->
-        <input type="submit" value="Registrar">
+        <input type="submit" value="EDITAR">
 
     </form>
 
