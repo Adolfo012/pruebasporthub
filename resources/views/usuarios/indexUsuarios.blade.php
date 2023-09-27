@@ -15,9 +15,25 @@
                     {{ $usuarios->apodo }}
 
                 </a>
+
+                <a>--  {{ $usuarios->nombre }}  --</a>
+                <a>  {{ $usuarios->apellidos }}  --</a>
+                <a>  {{ $usuarios->genero }}  --</a>
+                <a>  {{ $usuarios->edad }}  --</a>
+                <a>  {{ $usuarios->email }}  --</a>
+                <a href="{{ route('usuarios.edit', $usuarios) }}">  EDITAR </a>
+
+                |
+                <form action="{{ route('usuarios.destroy', $usuarios) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Eliminar</button>
+                </form>
+
             </li>
         @endforeach 
-    </ul
+    </ul>
+    <a href="{{route('usuarios.create', $usuarios) }}">Agregar</a>
 
 </body>
 </html>

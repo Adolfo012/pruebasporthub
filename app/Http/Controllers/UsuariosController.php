@@ -54,24 +54,32 @@ class UsuariosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(usuarios $usuarios)
+    public function edit(usuarios $usuario)
     {
-        //
+        return view('usuarios.editUsuario', compact('usuario'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, usuarios $usuarios)
+    public function update(Request $request, usuarios $usuario)
     {
-        //
+        $usuario->apodo = $request->apodo;
+        $usuario->nombre = $request->nombre;
+        $usuario->apellidos = $request->apellidos;
+        $usuario->edad = $request->edad;
+        $usuario->genero = $request->genero;
+        $usuario->email = $request->email;
+        $usuario->save();
+        return redirect()->route('usuarios.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(usuarios $usuarios)
+    public function destroy(usuarios $usuario)
     {
-        //
+        $usuario->delete();
+        return redirect()->route('usuarios.index');
     }
 }
